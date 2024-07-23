@@ -27,5 +27,6 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
 
+  header("location:../panel/dashbord.html");
 
 ?>
