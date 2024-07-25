@@ -16,8 +16,8 @@ if ($result->num_rows > 0) {
 
     $_SESSION["id"] = $row['id'];
      
-    header("Location: href:../panel/dashbord.html");
-
+    header("Location:../panel/dashbord.html");
+    
 } else {
     echo "0 results";
 }
