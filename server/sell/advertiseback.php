@@ -1,6 +1,6 @@
 <?php
 
-include("../../template/connect.php");
+
 
 
 
@@ -11,17 +11,12 @@ $price = $_POST["price"];
 
 
 
-
-  $sql = "INSERT INTO course (teachername, coursetopic, price)
-VALUES ('$teachername', '$coursetopic', '$price')";
-
-
 $target_dir = "../../template/";
 $target_file = $target_dir . basename($_FILES["courseupload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-// Check if image file is a actual image or fake image
+
 if(isset($_POST["submit"])) {
   $check = preg_match('/video\/*/',$_FILES['courseupload']['type']);
   if($check == false) {
@@ -40,8 +35,8 @@ if (file_exists($target_file)) {
 }
 
 // Check file size
-if ($_FILES["photo"]["size"] > 4000000000) {
-echo "file size is too high"
+if ($_FILES["courseupload"]["size"] > 4000000000) {
+echo "file size is too high";
   $uploadOk = 0;
   
 }
@@ -60,10 +55,10 @@ if ($uploadOk == 1) {
 
 include("../../template/connect.php");
 
+if ($uploadOk == 1) {
 
-
-$sql = "INSERT INTO course (filepath)
-VALUES ('$target_file')";
+$sql = "INSERT INTO course (teachername, coursetopic, price, filepath)
+VALUES ('$teachername', '$coursetopic', '$price', '$target_file')";
 
 
 
@@ -75,6 +70,6 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
 
-
+}
 
 ?>
