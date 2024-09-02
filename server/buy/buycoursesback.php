@@ -25,19 +25,18 @@ if ($result->num_rows > 0) {
 
     while($row = $result->fetch_assoc()) {
         echo "<tr>";
-        echo "<td>" . $row['id'] . "</td>";
-        echo "<td>" . $row['techername'] . "</td>";
-        echo "<td>" . $row['coursetopic'] . "</td>";
-        echo "<td>" . $row['price'] . "</td>";
-        echo "<td><img src=$row['path']""</td>";
-        echo "<td><a href='registerCourse.php?id=" . $row['id'] . "'>buy</a></td>";
+        echo "<td>" . $row['id'] . "</td>" . '<br>';
+        echo "<td>" . $row['teachername'] . "</td>" . '<br>';
+        echo "<td>" . $row['coursetopic'] . "</td>" . '<br>';
+        echo "<td>" . $row['price'] . "</td>" . '<br>';
+        echo "<td><a href='../../server/buy/register.php'?id=" . $row['id'] . ">buy</a></td>";
         echo "</tr>";
     }
 } else {
     echo "0 results";
 }
 
-connclose();
+
 ?>
 </body>
 </html>
