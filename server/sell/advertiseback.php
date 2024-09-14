@@ -57,7 +57,7 @@ include("../../template/connect.php");
 
 if ($uploadOk == 1) {
 
-$sql = "INSERT INTO course (teachername, coursetopic, price, filepath)
+$sql = "INSERT INTO course (teachername, coursetopic, prise, filepath)
 VALUES ('$teachername', '$coursetopic', '$price', '$target_file')";
 
 
