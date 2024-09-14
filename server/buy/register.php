@@ -12,7 +12,7 @@ $date = date("Y/m/d");
 
 
 $sql = "INSERT INTO boughtcourse (userid, courseid, date)
-VALUES ('$userid', '$userid', '$date')";
+VALUES ('$userid', '$courseid', '$date')";
 
 
 
