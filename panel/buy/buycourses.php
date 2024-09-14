@@ -11,7 +11,7 @@
 
 <?php
 
-include("../../server/buy/buycoursesback.php")
+include("../../server/buy/buycoursesback.php");
 
 ?>
 
