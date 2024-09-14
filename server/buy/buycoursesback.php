@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>darkhast</title>
-</head>
-<body>
+
   <?php
 session_start();
 
@@ -28,8 +21,8 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row['id'] . "</td>" . '<br>';
         echo "<td>" . $row['teachername'] . "</td>" . '<br>';
         echo "<td>" . $row['coursetopic'] . "</td>" . '<br>';
-        echo "<td>" . $row['price'] . "</td>" . '<br>';
-        echo "<td><a href='../../server/buy/register.php'?id=" . $row['id'] . ">buy</a></td>";
+        echo "<td>" . $row['prise'] . "</td>" . '<br>';
+        echo "<td><a href='../../server/buy/register.php?id=" . $row['id'] . "'>buy</a></td>";
         echo "</tr>";
     }
 } else {
@@ -38,5 +31,3 @@ if ($result->num_rows > 0) {
 
 
 ?>
-</body>
-</html>
