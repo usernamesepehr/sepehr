@@ -18,10 +18,13 @@ $sql = "INSERT INTO user (name, lastname, password, username, phone, repeatpassw
 VALUES ('$name', '$lastname', '$pasword', '$usernam', '$phone', '$repeatpassword')";
 
 
-
+session_start();
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
+    header("location:../panel/dashbord.html");
+    
+    $_SESSION["id"] = $row['id'];
   } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
   }
