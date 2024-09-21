@@ -1,10 +1,13 @@
 <?php
+session_start();
 
+
+ 
 include("../template/connect.php");
 
 
 
-session_start();
+
 
 $phone = $_POST['phone'];
 $pasword = $_POST['password'];
@@ -14,7 +17,9 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
 
-    $_SESSION["id"] = $row['id'];
+
+    $row = $result->fetch_assoc();
+    $_SESSION['id'] = $row['id'];
      
     header("Location:../panel/dashbord.html");
     
