@@ -10,19 +10,21 @@ $userid=$_SESSION['id'];
 $sql = "SELECT courseid from boughtcourse where userid = '$userid'";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
-$sql = "SELECT * from course where id = '$row[id]'";
+$sql = "SELECT * from course where id = $row[courseid]";
 $result = $conn->query($sql);
 $row = $result->fetch_assoc();
 
+
+echo "<br>";
 echo "id:" . $row['id'];
-echo "<br>"
+echo "<br>";
 echo "teacher name:" . $row['teachername'];
 echo "<br>";
 echo "coursetopic:" . $row['coursetopic'];
 echo "<br>";
-echo "price:" . $row['price'];
+echo "price:" . $row['prise'];
 echo "<br>";
-echo "<video width="700" height="400" controls>";
+echo "<video width=700 height=400 controls>";
 echo "<source src='" . $row['filepath'] . "'>";
 echo "</video>";
 
